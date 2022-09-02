@@ -12,5 +12,5 @@ It has provision of charts to view most listened songs which is implemented usin
 
 Technologies used:
 
-AngularJS framework
+AngularJS
 
