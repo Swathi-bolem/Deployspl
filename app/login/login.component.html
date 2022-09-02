@@ -1,0 +1,18 @@
+<div>.</div><div class="body">
+<mat-card>
+    <mat-card-header class="testit">
+        Login
+    </mat-card-header>
+    <mat-card-content>
+        <form autocomplete="off" [formGroup]="loginform" (ngSubmit)="checkuser(loginform.value)">
+            <mat-form-field class="fullwidth" >
+              <input id="name" type="text" placeholder="Enter you email id" matInput formControlName="uname" required>
+            </mat-form-field><br>
+            <mat-form-field class="fullwidth" >
+              <input id="password" placeholder="enter password" matInput formControlName="password" type="password" required>
+            </mat-form-field>
+            <mat-card-actions>
+                <button mat-raised-button color="accent" type="submit" [disabled]="!loginform.valid">Log In</button></mat-card-actions>
+           </form> <h3 id="error" class="testit" *ngIf="en">Entered credentials are invalid. please Register to login</h3>
+    </mat-card-content>
+</mat-card></div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div><div>.</div>

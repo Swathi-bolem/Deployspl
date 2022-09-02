@@ -1,0 +1,401 @@
+.search{
+  width:15%;
+  height:28px;
+  margin-top:5px;
+ margin-left:615px;
+ border-color: rgb(139, 47, 47);
+ border-radius: 8%;
+}
+.options{
+  margin-top: 10px;
+  margin-left: 200px;
+  font-size: 17px;
+}
+#gotoplay{
+  position: fixed;
+}
+.intexts{
+  color:black;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: sans-serif;
+  font-style: inherit;
+  margin-left: 10px;
+  }
+
+.mat-tab-group {
+    margin-bottom: 48px;
+  }
+  .container{
+    margin:10px;
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size:20px;
+  }
+
+  mat-card {
+    max-width: 500px;
+    margin: 2em auto;
+    text-align: center;
+    box-shadow: -1rem 0 3rem rgb(78, 75, 75);
+  transition: 0.3s ease-out;
+  }
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+  }
+  select{
+    margin-top: 5px;
+    height:19px;
+    margin-right:3px;
+    margin-left: 10px;
+  }
+  input{
+    margin-left: -0px;
+    height:15px;
+    margin-right:3px;
+    font-size: 15px;
+  }
+  button{
+    margin-top: 15px;
+    height: 25px;
+    margin-right:3px;
+  }
+  h2{
+    text-align: center;
+  }
+  .card:not(:first-child) {
+    margin-left: -50px;
+}
+  
+  mat-card:hover {
+    transform: translate(10px);
+    transition: 0.4s ease-out;
+    box-shadow: -1rem 0 3rem rgb(61, 57, 57);
+    
+  }
+  
+  mat-card:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: 0.3s ease-out;
+    max-width: 400px;
+  }
+  .input{
+    margin-left: 600px;
+    width:15%;
+    height:28px;
+     margin-left:600px;
+     border-color:coral;
+     border-radius: 5%;
+  }
+  
+.card {
+  margin-left: 220px;
+  height: 400px;
+  background-color: #2e2b33;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  background-image: url("/assets/music2.jpg");
+  transition: 0.4s ease-out;
+  position: relative;
+  min-width: 240px;
+}
+  .container{
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-left: -110px;
+  }
+.card:hover {
+  transform: translateX(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: white;
+  font-weight: 500;
+  position: relative;
+ text-align: center;
+  font-size: 20px;
+  top: 15px;
+}
+.p{
+  margin-top: 40px;
+  font-size: 28px;
+}
+button{
+  height:40px;
+}
+.playbutto{
+  height:40px;
+  margin-top: 40px;
+  margin-left: 45px;
+  width:55%;
+}
+.playbutt{
+  height:40px;
+  margin-left: 45px;
+  width:55%;
+}
+.playbutton{
+  height:40px;
+  width:55%;
+  margin-left: 45px;
+}
+.playbuttons{
+  height:40px;
+  width:55%;
+  margin-left: 45px;
+}
+.list{
+  
+    position: relative;
+    max-width: 100%;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    grid-template-rows:  minmax(50px,auto);
+    margin:45px;
+    grid-auto-flow: dense;
+    grid-gap:10px;
+    border-radius: 20px;
+  
+}
+.playliststitle{
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+ margin-top:20px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left:50px;
+}  
+.fullwidth {
+  width: 150%;
+}
+h1{
+  margin-left: 100px;
+}
+  #l{
+    margin-top: 100px;
+  }
+  button{
+    color:white;
+    background-color: rgb(46, 38, 38);
+    margin-left: 9px;
+    font-weight: 550;
+    border-radius: 5%;
+  }
+  mat-card-title{
+    text-align: center;
+    margin-left: 50px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  p{
+    margin-top: 5px;
+  }
+  .scroll-top {
+    width: 55px;
+    height: 53px;
+    position:fixed;
+    bottom: 25px;
+    right: 20px;
+    border-radius:20%;
+    background: rgb(231, 94, 117);
+    line-height: 45px;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-top i {
+    display: inline-block;
+    color:black;
+  }
+  .scroll-top.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .scroll-top:hover{
+    filter: brightness(90%);
+  }
+  
+  @media(max-width:770px){
+    .card {
+      margin-left: 150px;
+      height: 400px;
+      background-color: #2e2b33;
+      border-radius: 10px;
+      box-shadow: -1rem 0 3rem #000;
+      background-image: url("/assets/music2.jpg");
+      transition: 0.4s ease-out;
+      position: relative;
+      min-width: 240px;
+    }
+    
+    .playbutto{
+      height:40px;
+      margin-top: 40px;
+      margin-left: 20px;
+      width:55%;
+    }
+    .playbutt{
+      height:40px;
+      margin-left: 20px;
+      width:55%;
+    }
+    .playbutton{
+      height:40px;
+      width:55%;
+      margin-left: 20px;
+    }
+    .playbuttons{
+      height:40px;
+      width:55%;
+      margin-left: 20px;
+    }
+  }
+  @media(max-width:770px){
+    .card {
+      margin-left: 150px;
+      height: 400px;
+      background-color: #2e2b33;
+      border-radius: 10px;
+      box-shadow: -1rem 0 3rem #000;
+      background-image: url("/assets/music2.jpg");
+      transition: 0.4s ease-out;
+      position: relative;
+      min-width: 240px;
+    }
+    
+    .playbutto{
+      height:40px;
+      margin-top: 40px;
+      margin-left: 70px;
+      width:45%;
+    }
+    .playbutt{
+      height:40px;
+      margin-left: 70px;
+      width:45%;
+    }
+    .playbutton{
+      height:40px;
+      width:45%;
+      margin-left: 70px;
+    }
+    .playbuttons{
+      height:40px;
+      width:45%;
+      margin-left: 70px;
+    }
+  }
+    @media(max-width:800px){
+      mat-card-title{
+        text-align: center;
+        font-size: 15px;
+      }
+      mat-card {
+        max-width: 400px;
+        margin: 2em auto;
+        text-align: center;
+    
+      }
+      mat-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+      }
+      .example-card{
+        min-width: 250px;
+      }
+      .scroll-top {
+        width: 35px;
+        height: 38px;
+        position:fixed;
+        bottom: 20px;
+        right: 20px;
+        border-radius:20%;
+        background: rgb(231, 94, 117);
+        line-height: 45px;
+        z-index: 9999;
+        font-size: 30px;
+        border-radius: 6px;
+        border-bottom-width: 2px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .scroll-top i {
+        display: inline-block;
+        color:black;
+      }
+      .scroll-top.show{
+        bottom: 20px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .scroll-top:hover{
+        filter: brightness(90%);
+      }
+      
+.card {
+  margin-left: 220px;
+  height: 340px;
+  background-color: #2e2b33;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  background-image: url("/assets/music2.jpg");
+  transition: 0.4s ease-out;
+  position: relative;
+  min-width: 150px;
+}
+ 
+  .playbutto{
+    height:30px;
+    margin-top: 40px;
+    margin-left: 25px;
+    width:105px;
+  }
+  .playbutt{
+    height:30px;
+    margin-left: 25px;
+    width:105px;
+  }
+  .playbutton{
+    height:30px;
+    width:105px;
+    margin-left: 25px;
+  }
+  .playbuttons{
+    height:30px;
+    width:105px;
+    margin-left: 25px;
+  }
+  
+.title {
+  color: white;
+  position: relative;
+ text-align: center;
+  font-size: 15px;
+     }
+     .p{
+       font-size: 18px;
+     }
+  }
+  

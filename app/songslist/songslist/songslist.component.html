@@ -1,0 +1,144 @@
+
+
+  <div class="bg">
+<mat-tab-group color="accent" backgroundColor="accent" mat-align-tabs="center">
+  <mat-tab  label="Songslist">
+    <button class="top" *ngIf="playlistbutton" (click)="ondeletemultiple()" color="accent" mat-raised-button>Delete multiple songs</button>
+      <input class="search" color="accent"  type="text" placeholder="Search" [(ngModel)]="searchvalue">
+    <p class="intexts">  <input type="checkbox" (click)="o($event)">Singers
+    <input  (click)="s($event)" type="checkbox">Duration
+    <input (click)="q($event)" type="checkbox">Genre
+    <input (click)="w($event)" type="checkbox">Song URL</p>
+      
+  
+     
+      <div class="containe" fxLayout="row wrap" fxLayoutAlign="center"
+      fxLayoutGap="10px" fxLayout.xs="column" fxLayoutGap.xs="0">
+      
+        <mat-card  fxFlex="20%" *ngFor="let song of allSong | searchfilter:searchvalue"  class="example-card">
+        
+              
+              <mat-card-title>{{song.title}}</mat-card-title>
+              <input (click)="onselectsongs($event,song)" *ngIf=enablecheckbox type="checkbox">
+           
+            <img mat-card-image src="assets/music4.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              
+              <b><p>Album:{{song.album}}</p>
+                 <p *ngIf="a">Singers : {{song.singers}}</p>
+               <p *ngIf="d">Duration : {{song.length}}</p>
+               <p *ngIf="c">Genre:{{song.genre}}</p>
+               <p *ngIf="b">Play : {{song.url}}</p></b>
+              
+            </mat-card-content>
+          
+              <button  mat-raised-button color="accent" (click)='moveToSelectedTab("Add songs to the list")' (click)="editSong(song)" mat-button>Update</button>
+              <button color="black"  (click)="deleteSong(song)" mat-button>Delete</button>
+              
+          
+          </mat-card>
+        </div>
+   
+    </mat-tab>
+    <mat-tab  label="Add songs to the list"> 
+    
+        
+        <mat-card ><mat-card-header>
+            <h1>Enter Song details</h1>
+            </mat-card-header><mat-card-content>
+              <form autocomplete="off" [formGroup]="songform" (ngSubmit)="addsong(songform.value)">
+                <mat-form-field class="fullwidth" >
+                  <input pattern="[a-z_, .A-Z]*" [(ngModel)]="songobj.title" id="title" placeholder="Enter Song title" matInput formControlName="title" required>
+                </mat-form-field><br>
+                <mat-form-field class="fullwidth" >
+                  <input pattern="[a-z_, .A-Z]*" [(ngModel)]="songobj.album" id="album" placeholder="Enter Album/Movie name" matInput formControlName="album"  required>
+                </mat-form-field><br>
+                <mat-form-field class="fullwidth" >
+                  <input pattern="[a-z_, .A-Z]*" [(ngModel)]="songobj.singers" id="singers" placeholder="Enter Singers Names" matInput formControlName="singers" type="text" required>
+                </mat-form-field><br>
+                <mat-form-field class="fullwidth" >
+                  <input [(ngModel)]="songobj.length" id="length" placeholder="Enter the duration of song" matInput formControlName="length" type="number"  required>
+                </mat-form-field><br>
+                <mat-form-field  class="fullwidth" >
+                <mat-select  [(ngModel)]="songobj.genre" id="genre" placeholder="select genre" class="form-control" matInput formControlName="genre"  required>
+                    <mat-option>
+                    </mat-option>
+                    <mat-option  [value]="gen" *ngFor="let gen of genres">{{gen}}</mat-option>
+                  </mat-select>
+                  
+                </mat-form-field><br>
+                <mat-form-field class="fullwidth" >
+                  <input [(ngModel)]="songobj.url" id="url" placeholder="Give song URL" matInput formControlName="url"  required>
+                </mat-form-field><mat-card-actions>
+                <button mat-raised-button color="accent" (click)='moveToSelectedTab("Songslist")' *ngIf="!isEdit" type="submit" [disabled]="!songform.valid">Register</button></mat-card-actions>
+                <button mat-raised-button color="accent"  *ngIf="isEdit"  (click)= 'moveToSelectedTabs("Songslist")' type="button">Update</button>
+              </form></mat-card-content></mat-card>
+    </mat-tab>
+  </mat-tab-group>
+  
+  <button (click)="gotoup()"class="scroll-top" type="button">
+    <i class="fa fa-angle-up"></i>
+    </button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

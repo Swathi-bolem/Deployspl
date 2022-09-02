@@ -1,0 +1,170 @@
+
+<mat-tab-group [(selectedIndex)]="selectedIndex" mat-align-tabs="center" color="accent">
+  <mat-tab color="accent" label="Playlist"> 
+    <input class="search" color="accent"  type="text" placeholder="Search" [(ngModel)]="query">
+    <form [formGroup]="playlistform" autocomplete="off">
+    <p class="intexts">  <input type="checkbox" (click)="o($event)">Singers
+      <input (click)="s($event)" type="checkbox">Duration
+      <input (click)="q($event)" type="checkbox">Genre
+      <input (click)="w($event)" type="checkbox">Song URL
+    <input class="input" id="playlistname" required placeholder="Enter name of your playlist" #playlistname formControlName="playlistname" required label=name>       
+    <button class="test" *ngIf="samplebuttoncreate" (click)="enablecheck()" mat-raised-button color="accent">Select songs to create new playlist</button>
+    <button *ngIf=enablecheckboxtocreateplaylist mat-raised-button color="accent" type="submit" (click)="createplaylist(playlistform.value)">Create</button>
+    </p>
+
+  <div fxLayout="row wrap" fxLayoutAlign="center"
+      fxLayoutGap="10px" fxLayout.xs="column" fxLayoutGap.xs="0">
+    <mat-card  fxFlex="17%"  *ngFor="let song of allsong | search2filter:query"  class="example-card">
+      <mat-card-header>
+        
+        <mat-card-title>{{song.title}}</mat-card-title>
+       <input *ngIf=enabletoaddsongstoexistinglist  (change)="selectsongstoaddtoselectedplaylist($event,song)" type="checkbox">
+        <input *ngIf=enablecheckboxtocreateplaylist (change)="selectedsongs($event,song)" type="checkbox">
+      </mat-card-header>
+      <img mat-card-image src="assets/music4.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <b><p>Album:{{song.album}}</p>
+          <p *ngIf="a">Singers : {{song.singers}}</p>
+        <p *ngIf="d">Song duration : {{song.length}}</p>
+        <p *ngIf="c">Genre:{{song.genre}}</p>
+        <p *ngIf="b">Play Song : {{song.url}}</p></b>
+      </mat-card-content>
+      <!--<mat-card-actions>
+        <button  mat-raised-button    (click)= "editSong(song)" mat-button>Edit</button>
+        <button  mat-raised-button color="accent" (click)="deleteSong(song)" mat-button>Delete</button>
+        </mat-card-actions>-->
+          </mat-card></div>
+
+     
+
+    <!--<div *ngFor="let song of allplaylistsongs">{{song.playlistname}}
+    <button (click)="viewplaylist(song)"></button>
+    </div>-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <div  class="container">
+  <div class="card" fxFlex="20%"  *ngFor="let song of allplaylistsongs;">
+    
+    <div class="title">
+   <b> Playlist</b> <br><p class="p" > {{song.playlistname}}</p></div>
+    <div>
+      <button class="playbutto" mat-raised-button  color="accent" (click)="addsongtoselectedplaylist(song)"> Add  songs</button>
+      <button class="playbutt" mat-raised-button  color="accent" (click)="deletesongsfromselectedplaylist(song,'listed')" >Delete Songs</button>
+      <button class="playbutton" mat-raised-button  color="accent" (click)="viewplaylist(song,'listed')" >View  playlist</button>
+      <button class="playbuttons" mat-raised-button color="accent" (click)="deleteplaylist(song)">Delete Playlist</button>
+      </div>
+</div></div>
+</form>
+
+
+
+
+    
+<div class="list" id="listed" fxLayout="row wrap" fxLayoutAlign="center"
+fxLayoutGap="10px" fxLayout.xs="column" fxLayoutGap.xs="0" *ngIf=showplaylistsongs>
+  <h2 class="playliststitle"><b>{{exs.playlistname}} playlist</b></h2>
+     <mat-card id="l" fxFlex="20%" *ngFor="let song of exs.songs;"  class="example-card">
+      <mat-card-header>
+        
+        <mat-card-title>{{song.title}}</mat-card-title>
+        <input type="checkbox" *ngIf=enablechecktodelete (click)="deleteselectedsongfromplaylist($event,song)">
+      </mat-card-header>
+      <img mat-card-image src="assets/music4.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+        <b>Album:{{song.album}}<br>
+           Singers : {{song.singers}}<br>
+         Song duration : {{song.length}}<br>
+        Genre:{{song.genre}}<br>
+         Play Song : {{song.url}}</b></p>
+        
+      </mat-card-content>
+     <mat-card-actions>
+      <button mat-button (click)="deleteasongfromplaylist(song,exs)">Delete</button>
+    <!-- <button mat-raised-button (click)="deletesonginplaylist(exs,song)">Delete</button>-->
+     </mat-card-actions>
+    </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </mat-tab> 
+  <mat-tab *ngIf="enable2tab" label="Edit song"> <mat-card ><mat-card-header>
+    <h1><b>Update Song details</b></h1>
+    </mat-card-header><mat-card-content>
+      <form autocomplete="off" [formGroup]="songform" >
+        <mat-form-field class="fullwidth" >
+          <input [(ngModel)]="songobj.title" id="title" placeholder="Enter Song title" matInput formControlName="title" required>
+        </mat-form-field><br>
+        <mat-form-field class="fullwidth" >
+          <input [(ngModel)]="songobj.album" id="album" placeholder="Enter Album/Movie name" matInput formControlName="album"  required>
+        </mat-form-field><br>
+        <mat-form-field class="fullwidth" >
+          <input [(ngModel)]="songobj.singers" id="singers" placeholder="Enter Singers Names" matInput formControlName="singers" type="text" required>
+        </mat-form-field><br>
+        <mat-form-field class="fullwidth" >
+          <input [(ngModel)]="songobj.length" id="length" placeholder="Enter the duration of song" matInput formControlName="length" type="number"  required>
+        </mat-form-field><br>
+        <mat-form-field class="fullwidth" >
+          <mat-select [(ngModel)]="songobj.genre" id="genre" placeholder="select genre" class="form-control" matInput formControlName="genre"  required>
+            <mat-option>
+            </mat-option>
+            <mat-option  [value]="gen" *ngFor="let gen of genre">{{gen}}</mat-option>
+          </mat-select>
+        </mat-form-field><br>
+        <mat-form-field class="fullwidth" >
+          <input [(ngModel)]="songobj.url" id="url" placeholder="Give song URL" matInput formControlName="url"  required>
+        </mat-form-field><mat-card-actions>
+        <button mat-raised-button color="accent"  [disabled]="!songform.valid"  (click)= "updateSong()" type="button">Update</button>
+      </mat-card-actions> </form></mat-card-content></mat-card>
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </mat-tab>
+  <mat-tab label="Chart"> 
+    <div>
+    <!--  <input type="text" [(ngModel)]="topviews">-->
+        <div class="options"> Get Top <select [(ngModel)]="top"  name="top"(change)="getcustom($event)" id="topviews"  >
+       <option  *ngFor="let i of customtop">{{i}}</option> 
+      </select> Playlists</div>
+    </div>
+    <div style="display: block;width:75%;margin-left: 200px;size:28px">
+      <canvas baseChart 
+     
+        [colors]="barChartColors"
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+  
+   
+  
+  
+  </mat-tab>
+</mat-tab-group>
+<button (click)="gotoup()"class="scroll-top" type="button">
+  <i class="fa fa-angle-up"></i>
+ 

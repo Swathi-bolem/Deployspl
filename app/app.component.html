@@ -1,0 +1,57 @@
+<!--<nav class="navbar">
+  <div class="max-width">
+      <div class="logo">
+<a>Swathi</a></div>
+<ul class="menu">
+  
+<li><a routerLink="/home"  >Home</a></li>
+<li><a routerLink="/about" >About</a></li>
+<li><a routerLink="/songslist" >Songslist</a></li>
+<li><a routerLink="/playlist">Playlist</a></li>
+<li><a routerLink="/register">Register</a></li>
+<li><a routerLink="/login" >Login</a></li>
+<li><a routerLink="/about" >Profile</a></li>
+</ul> 
+</div>
+</nav>--><div>
+<mat-toolbar color="accent">
+  <mat-toolbar-row>
+   
+    <h1 class="see">SSPL</h1>
+    <span class="menu-spacer"></span>
+    <div class="span">
+      <a mat-button [routerLink]="'/about'"> About</a>
+      <a mat-button [routerLink]="'/songslist'"> Songslist </a>
+      <a mat-button [routerLink]="'/playlist'">Playlists </a>
+      <a *ngIf=!mess mat-button [routerLink]="'/register'">Register </a>
+      <a *ngIf=!mess mat-button [routerLink]="'/login'"> Login </a>
+     
+      <a *ngIf=mess mat-button [routerLink]="'/profile'"> Profile </a>  
+      <a *ngIf=mess mat-button (click)="onlogout($event)">Logout</a>
+    </div>
+  </mat-toolbar-row>
+
+
+</mat-toolbar>
+
+<mat-sidenav-container fxFlexFill class="example-container">
+
+  <mat-sidenav color="accent" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+    <div fxLayout="column">
+      <a mat-button [routerLink]="'/about'"> About</a>
+      <a mat-button [routerLink]="'/songslist'"> Songslist </a>
+      <a mat-button [routerLink]="'/playlist'">Playlists </a>
+      <a *ngIf=!mess mat-button [routerLink]="'/register'">Register </a>
+      <a *ngIf=!mess mat-button [routerLink]="'/login'"> Login </a>
+     
+      <a *ngIf=mess mat-button [routerLink]="'/profile'"> Profile </a>  
+      <a *ngIf=mess mat-button (click)="onlogout($event)">Logout</a>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>
+
+
+</div>
+<div class="bg">
+<router-outlet></router-outlet></div>
+

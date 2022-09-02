@@ -1,0 +1,118 @@
+img{
+    max-height: 600px;
+    min-width: 1500px;
+}
+.container-fluid{
+    max-width: 1400px;
+}
+h3{
+    font-size: 20px;
+}
+.col-sm-12 btn btn{
+    font-size: 30px;
+}
+.col-6{
+    height: 300px;
+    width: 500px;
+    margin-left: 300px;
+}
+.text{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+.tex{ 
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+margin-left:480px;
+}
+.container{
+    border-radius: 24px;
+    grid-template-columns: 40px 50px auto 50px 40px;
+    grid-template-rows: 25% 100px auto; 
+}
+.row{
+    margin-right:15px;
+    margin-bottom: 30px;
+  }
+  .card{
+      margin-left:250px;
+      max-width:500px;
+      
+      margin-bottom: 30px;
+      text-align: center;
+      border-radius: 20px;
+      height: 230px;
+      background-color: rgb(70, 59, 59);
+      background-image: url("/assets/music12.jpg");
+      background-size: 100%;
+      
+  }
+  .card:hover{
+    transform: translate(10px);
+    transition: 0.4s ease-out;
+    box-shadow: -1rem 0 3rem rgb(153, 58, 58);
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  h3{
+      color:white;
+      margin-top: 40px;;
+      font-size: 25px;
+      font-weight: 400;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  }
+  button{
+      color:rgb(230, 230, 230);  
+      font-size: 24px; 
+      font-weight: 500;
+      margin-top: 25px;
+  }
+  @media(max-width:1000px){
+
+    img{
+        max-height: 400px;
+        min-width: 600px;
+    }
+    .card{
+     
+        max-width:600px;
+        
+        margin-bottom: 30px;
+        text-align: center;
+        border-radius: 20px;
+        height: 260px;
+        background-color: rgb(70, 59, 59);
+        background-image: url("/assets/music12.jpg");
+        background-size: 100%;
+        margin-left:10px;
+    }
+    .tex{ 
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 10px;
+       margin-left:100px;
+    }
+  }
+  @media(max-width:770px){
+  .tex{  font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+   }
+   button{
+    color:rgb(230, 230, 230);  
+    font-size: 24px; 
+    font-weight: 500;
+    margin-top: 5px;
+}
+.card{
+    height: 280px;
+    width:300px;
+    margin-left: 160px;
+}
+  }

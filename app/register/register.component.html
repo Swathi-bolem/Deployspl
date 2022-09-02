@@ -1,0 +1,28 @@
+<div>p</div>
+<mat-card ><mat-card-header>
+  <h1 class="mb-0">Registration Form</h1>
+  </mat-card-header><mat-card-content>
+    <form autocomplete="off" [formGroup]="regForm" (ngSubmit)="submit(regForm.value)">
+      <mat-form-field class="fullwidth" >
+        <input id="name" placeholder="Enter you email id" matInput formControlName="email" required>
+      </mat-form-field><br>
+      <mat-form-field class="fullwidth" >
+        <input id="password" placeholder="enter password" matInput formControlName="password" type="password" required>
+      </mat-form-field><br>
+      <mat-form-field class="fullwidth" >
+        <input id="firstname" placeholder="enter firstname" matInput formControlName="firstname" type="firstname" required>
+      </mat-form-field><br>
+      <mat-form-field class="fullwidth" >
+        <input id="lastname" placeholder="enter lastname" matInput formControlName="lastname" type="lastname" required>
+      </mat-form-field><br>
+      <mat-form-field class="fullwidth" >
+        <input id="location" placeholder="enter current location" matInput formControlName="location" type="location" required>
+      </mat-form-field><br>
+      <mat-form-field class="fullwidth" >
+        <input class="form-control" id="number" placeholder="enter mobile number" matInput formControlName="mobilenumber" type="mobilenumber" required>
+     
+      </mat-form-field><mat-card-actions>
+      <button mat-raised-button color="accent" type="submit" [disabled]="!regForm.valid">Register</button></mat-card-actions>
+    </form></mat-card-content></mat-card>
+  <div></div>
+<div>r</div>  

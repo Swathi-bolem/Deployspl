@@ -1,0 +1,71 @@
+/*navbar*/
+.navbar{
+    position: fixed;
+    transition: all 0.3s ease;
+    width: 98%;
+    z-index: 999;
+    padding: 4px 0;
+    font-family: 'Ubuntu', sans-serif;
+background-color: pink;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    text-decoration: none;
+    color:rgb(202, 94, 31);
+    font-size: 35px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 6px;
+}
+.navbar .menu li a{
+    color: rgb(202, 94, 31);
+    font-size: 25px;
+    text-decoration:none ;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color:rgb(202, 94, 31);
+}
+.navbar.sticky .menu li a:hover{
+    color:rgb(202, 94, 31);
+}
+ 
+.menu-spacer{
+      justify-content: space-between;
+      margin-right: 730px;
+      
+  }
+  span{
+      padding-right: 1rem;
+     
+  }
+  a{
+    font-size: 25px;
+    text-decoration: none;
+    font-size: 110%;
+    white-space: normal;
+  }
+  h1{
+    font-size: 35px;
+  }
+mat-toolbar{
+color:black}
+.bg{
+    background-image: url("/assets/music14.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #cccccc;
+}
+mat-toolbar{
+    height: 100px;
+}

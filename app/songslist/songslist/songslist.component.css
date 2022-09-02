@@ -1,0 +1,175 @@
+.intexts{
+color:black;
+font-size: 20px;
+font-weight: 400;
+font-family: sans-serif;
+font-style: inherit;
+
+margin-left: 100px;
+
+text-align: center;
+}
+.mat-tab-group {
+    margin-bottom: 48px;
+  }
+ 
+  .container{
+    margin:10px;
+  }
+ 
+ mat-card-title{
+   text-align: center;
+   margin-left: 60px;
+   font-size: 28px;
+   font-weight: 500;
+ }
+ img{
+   width:110%;
+   height:160%;
+ }
+ 
+  mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+    height: 100%;
+  }
+  
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+  }
+.search{
+  width:15%;
+  height:28px;
+ margin-left:15px;
+ border-color: rgb(139, 47, 47);
+ border-radius: 8%;
+}
+.scroll-top {
+  width: 55px;
+  height: 53px;
+  position:fixed;
+  bottom: 25px;
+  right: 20px;
+  border-radius:20%;
+  background: rgb(231, 94, 117);
+  line-height: 45px;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-top i {
+  display: inline-block;
+  color:black;
+}
+.scroll-top.show{
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-top:hover{
+  filter: brightness(90%);
+}
+mat-card:hover {
+  transform: translate(10px);
+  transition: 0.4s ease-out;
+  box-shadow: -1rem 0 3rem rgb(61, 57, 57);
+}
+
+mat-card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.3s ease-out;
+}
+button{
+  color:white;
+  background-color: rgb(46, 38, 38);
+  margin-left: 9px;
+  font-weight: 550;
+  border-radius: 5%;
+}
+.fullwidth {
+  width: 150%;
+}
+.top{
+  color:white;
+  
+  margin-left: 15px;
+  font-weight: 550;
+  border-radius: 5%;
+  margin-top: 5px;
+}
+@media(max-width:900px){
+  mat-card-title{
+    text-align: center;
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: 500;
+  }
+}
+.bg{
+  background-image: url("/assets/music14.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-color: #cccccc;
+}
+@media(max-width:800px){
+  mat-card-title{
+    text-align: center;
+    font-size: 15px;
+  }
+  mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+
+  }
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+  }
+  .example-card{
+    min-width: 250px;
+  }
+  .scroll-top {
+    width: 35px;
+    height: 38px;
+    position:fixed;
+    bottom: 20px;
+    right: 20px;
+    border-radius:20%;
+    background: rgb(231, 94, 117);
+    line-height: 45px;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-top i {
+    display: inline-block;
+    color:black;
+  }
+  .scroll-top.show{
+    bottom: 20px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .scroll-top:hover{
+    filter: brightness(90%);
+  }
+}
+@media (max-width: 800px) { .example-card { flex: 1 0 31%; } }
